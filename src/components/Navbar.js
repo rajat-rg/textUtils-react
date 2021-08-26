@@ -35,10 +35,10 @@ export default function Navbar(props) {
           </ul>
          
         </div>
-        <button className="btn btn-primary mx-2" onClick={props.changeTheme.blue} />
-        <button className="btn btn-success mx-2" onClick={props.changeTheme.green} />
-        <button className="btn btn-warning mx-2" onClick={props.changeTheme.yellow} />
-        <button className="btn btn-danger mx-2" onClick={props.changeTheme.red}/>
+        <button className="btn btn-primary mx-2" onClick={props.changeTheme.blue} style={{border: '1px solid black'}} />
+        <button className="btn btn-success mx-2" onClick={props.changeTheme.green} style={{border: '1px solid black'}}/>
+        <button className="btn btn-warning mx-2" onClick={props.changeTheme.yellow} style={{border: '1px solid black'}}/>
+        <button className="btn btn-danger mx-2" onClick={props.changeTheme.red} style={{border: '1px solid black'}}/>
 
         <div className={`form-check form-switch mx-3 text-${props.mode==='light'?'dark':'light'} `}>
         <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick= {props.toggleMode} />
