@@ -2,7 +2,13 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import TextArea from "./components/TextArea";
 import Alert from "./components/Alert";
+import About from "./components/About";
 import React, { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 function App() {
   const [color, setColor] = useState("white");
@@ -56,6 +62,7 @@ function App() {
   const changeTheme = { red: red, green: green, blue: blue, yellow: yellow };
   return (
     <>
+    <Router>
       <div className="App">
         <Navbar
           title="TextUtils"
@@ -66,12 +73,21 @@ function App() {
         />
       </div>
       <Alert alert={alert} />
-      <TextArea
-        heading="Enter your text here"
-        mode={mode}
-        showAlert={showAlert}
-        color={color}
-      />
+      <Switch>
+          <Route path="/about">
+            <About heading="About Us" mode={mode} color={color} />
+          </Route>
+          <Route path="/">
+              <TextArea
+            heading="Enter your text here"
+            mode={mode}
+            showAlert={showAlert}
+            color={color}
+          />
+          </Route>
+        </Switch>
+      
+      </Router>
     </>
   );
 }
